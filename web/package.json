@@ -1,0 +1,48 @@
+{
+  "name": "web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "NODE_OPTIONS='--inspect' next dev --port 3000 --show-all",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "g": "openapi-generator-cli generate -i 'http://localhost:5000/swagger/v1/swagger.json' -g typescript-fetch -o generated-api"
+  },
+  "dependencies": {
+    "@dnd-kit/core": "^6.0.8",
+    "@dnd-kit/sortable": "^7.0.2",
+    "@types/classnames": "^2.3.1",
+    "@types/node": "^18.16.3",
+    "@types/react-dom": "18.2.3",
+    "classnames": "^2.3.2",
+    "eslint": "8.39.0",
+    "eslint-config-next": "13.4.0",
+    "jira-client": "^8.2.2",
+    "mssql": "^9.1.1",
+    "next": "13.4.0",
+    "next-auth": "^4.22.1",
+    "postcss": "8.4.23",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "tailwindcss": "3.3.2",
+    "typescript": "5.0.4"
+  },
+  "devDependencies": {
+    "@types/jira-client": "^7.1.6",
+    "@types/mssql": "^8.1.2",
+    "@types/next": "^9.0.0",
+    "@types/react": "^18.2.6",
+    "autoprefixer": "^10.4.14",
+    "cssnano": "^6.0.1",
+    "lost": "^9.0.1",
+    "postcss-cssnext": "^3.1.1",
+    "postcss-custom-properties": "^13.1.5",
+    "postcss-import": "^15.1.0",
+    "postcss-mixins": "^9.0.4",
+    "postcss-nested": "^6.0.1",
+    "postcss-preset-env": "^8.3.2",
+    "postcss-pxtorem": "^6.0.0",
+    "postcss-simple-vars": "^7.0.1"
+  }
+}
