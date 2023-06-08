@@ -26,10 +26,12 @@ export default async function page({ params }: { params: { id: string } }) {
   const testResultsRes = await fetch(testResultsUrl, { cache: 'no-store' })
   const testResults = await testResultsRes.json()
   // console.log('testResults: ', testResults)
+  // console.log('testCases: ', testCases)
+  // console.log('testCasesRes: ', testCasesRes)
 
   return (
     <div>
-      <h2>Actions feature edit</h2>
+      <h2>Feature/id page</h2>
       <UpdateFeature feature={feature} />
       <SortableTree
         collapsible
