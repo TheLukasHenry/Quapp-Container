@@ -1,0 +1,10 @@
+CREATE TABLE [dbo].[companies] (
+    [id]   INT          IDENTITY (1, 1) NOT NULL,
+    [name] VARCHAR (50) NOT NULL,
+    [phone] VARCHAR (50) NOT NULL DEFAULT '555-555-5555',
+    CONSTRAINT [PK__Companie__2D971C4C4F0BA232] PRIMARY KEY CLUSTERED ([id] ASC)
+);
+
+
+GO
+

@@ -1,0 +1,5 @@
+{
+    "dataworkspace.excludedProjects": [
+        "TheQuapp/DatabaseProjectmain/DatabaseProjectmain.sqlproj"
+    ]
+}
