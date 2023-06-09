@@ -71,7 +71,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
   c.SwaggerDoc("v1", new OpenApiInfo { Title = "ServerC", Version = "v1" });
-  c.AddServer(new OpenApiServer { Url = "http://localhost:5000" });
+  c.AddServer(new OpenApiServer { Url = "http://localhost:5001" });
 });
 
 

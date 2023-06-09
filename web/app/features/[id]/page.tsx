@@ -16,9 +16,9 @@ async function getTestResults(id: RequestInit | undefined) {
 }
 
 export default async function page({ params }: { params: { id: string } }) {
-  const featureUrl = `http://localhost:5000/features/${params.id}`
-  const testCasesUrl = `http://localhost:5000/testCases/feature/${params.id}`
-  const testResultsUrl = `http://localhost:5000/testResults/${params.id}`
+  const featureUrl = `http://localhost:5001/features/${params.id}`
+  const testCasesUrl = `http://localhost:5001/testCases/feature/${params.id}`
+  const testResultsUrl = `http://localhost:5001/testResults/${params.id}`
   const featureRes = await fetch(featureUrl, { cache: 'no-store' })
   const feature = await featureRes.json()
   const testCasesRes = await fetch(testCasesUrl, { cache: 'no-store' })
