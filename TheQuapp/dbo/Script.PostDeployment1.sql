@@ -1,4 +1,5 @@
 -- This file contains SQL statements that will be executed after the build script.
+use QuappyMcQuapperson;
 
 IF NOT EXISTS (SELECT 1 FROM dbo.companies WHERE name = 'Company 1')
 BEGIN
