@@ -1,9 +1,9 @@
 'use client'
 import { useState } from 'react';
 import Link from 'next/link';
-import styles from './NavMenu.module.css';
-import { SignInButton, SignOutButton } from './buttons';
-import AuthCheck from './AuthCheck';
+import AuthCheck from '../app/AuthCheck';
+import { SignInButton, SignOutButton } from '../app/buttons';
+import styles from '../app/styles/NavMenu.module.css';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);

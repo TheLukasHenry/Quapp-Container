@@ -1,9 +1,9 @@
-import './globals.css'
 import AuthProvider from './AuthProvider'
-import NavMenu from './NavMenu'
-// import { Inter } from 'next/font/google'
+import NavMenu from '../components-client/NavMenu'
+import Hero from '@/components-client/Hero'
+import Footer from '@/components-client/Footer'
+import './styles/globals.css';
 
-// const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Quapp',
@@ -18,10 +18,10 @@ export default function RootLayout({
   return (
     <AuthProvider>
       <html lang="en">
-        <body
-        //  className={inter.className}
-        >
+        <body>
           <NavMenu />
+          <Hero />
+          <Footer />
           <div>{children} </div>
         </body>
       </html>
