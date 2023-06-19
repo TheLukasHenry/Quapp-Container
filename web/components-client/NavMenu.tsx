@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react';
 import Link from 'next/link';
-import AuthCheck from '../app/AuthCheck';
+import AuthCheck from '../AuthCheck';
 import { SignInButton, SignOutButton } from '../app/buttons';
 import styles from '../app/styles/NavMenu.module.css';
 
