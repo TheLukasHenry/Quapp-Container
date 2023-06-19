@@ -1,12 +1,12 @@
 'use client'
-import { useState } from 'react';
-import Link from 'next/link';
-import styles from './NavMenu.module.css';
-import { SignInButton, SignOutButton } from './buttons';
-import AuthCheck from './AuthCheck';
+import { useState } from 'react'
+import Link from 'next/link'
+import AuthCheck from '../AuthCheck'
+import { SignInButton, SignOutButton } from '../app/buttons'
+import styles from '@/styles/NavMenu.module.css'
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
     <nav className={styles.nav}>
