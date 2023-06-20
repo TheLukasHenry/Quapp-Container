@@ -12,8 +12,8 @@ type UpdateFeatureActionsProps = {
 
 export default function UpdateFeatureActions({
   feature,
-  putFeature,
-}: UpdateFeatureActionsProps) {
+}: // putFeature,
+UpdateFeatureActionsProps) {
   const { id, name, companyId } = feature || {}
 
   const featuresClient = new FeaturesApi()
@@ -24,14 +24,14 @@ export default function UpdateFeatureActions({
     'use server'
 
     const body: Feature = {
-      featureName: formData.get('featureName') as string,
-      companyID: Number(formData.get('companyID')),
-      featureID,
+      name: formData.get('featureName') as string,
+      companyId: Number(formData.get('companyID')),
+      id,
     }
     console.log('body: ', body)
     await featuresClient.featuresPut({ feature: body })
 
-    revalidatePath(`/feature/${feature.featureID}`)
+    revalidatePath(`/feature/${feature.id}`)
   }
 
   // async function putFeature(formData: FormData) {
@@ -55,10 +55,10 @@ export default function UpdateFeatureActions({
     <div>
       <h2>Actions edit</h2>
       <form action={putFeature}>
-        <label htmlFor="featureName">Name</label>
-        <input type="text" name="featureName" defaultValue={name ?? ''} />
-        <label htmlFor="companyID">companyID</label>
-        <input type="text" name="companyID" defaultValue={companyId ?? ''} />
+        <label htmlFor="name">Name</label>
+        <input type="text" name="name" defaultValue={name ?? ''} />
+        <label htmlFor="companyId">companyId</label>
+        <input type="text" name="companyId" defaultValue={companyId ?? ''} />
 
         <button type="submit">Save</button>
       </form>
