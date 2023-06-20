@@ -14,6 +14,7 @@ import { TestResultsApi } from '@/generated-api/apis/TestResultsApi'
 import { CreateTestResultInput } from '@/generated-api/models/CreateTestResultInput'
 import { UpdateTestResultInput } from '@/generated-api/models/UpdateTestResultInput'
 import { UpdateSingleTestResultInput } from '@/generated-api/models/UpdateSingleTestResultInput'
+import { Feature } from '@/generated-api/models/Feature'
 
 const testCasesClient = new TestCasesApi()
 const testResultClient = new TestResultsApi()
