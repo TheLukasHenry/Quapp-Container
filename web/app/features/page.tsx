@@ -17,7 +17,6 @@ export default async function Features() {
 
   return (
     <div>
-      Feature page
       <FeatureList features={features} />
       <CreateFeature count={features.length} />
     </div>

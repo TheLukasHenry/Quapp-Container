@@ -8,6 +8,7 @@ type FeatureListProps = {
 export default function FeatureList({ features }: FeatureListProps) {
   return (
     <div>
+      <h2>Features</h2>
       {features.map((feature) => {
         return (
           <div key={feature.id}>

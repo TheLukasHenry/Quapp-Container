@@ -1,9 +1,8 @@
 import AuthProvider from './AuthProvider'
-import NavMenu from '../components-client/NavMenu'
+import Navbar from '@/components-client/NavMenu';
 import Hero from '@/components-client/Hero'
 import Footer from '@/components-client/Footer'
 import '@/styles/globals.css';
-
 
 export const metadata = {
   title: 'Quapp',
@@ -19,10 +18,11 @@ export default function RootLayout({
     <AuthProvider>
       <html lang="en">
         <body>
-          <NavMenu />
-          <Hero />
-          <Footer />
-          <div>{children} </div>
+          <div id="main-content">
+            <Navbar />
+            <div>{children} </div>
+            <Footer />
+          </div>
         </body>
       </html>
     </AuthProvider>
