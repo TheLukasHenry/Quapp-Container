@@ -21,7 +21,7 @@
   margin-bottom: 0;
 } */
 .hero {
-  @apply bg-purple-500 text-white h-screen w-full flex justify-center items-center flex-col text-center;
+  @apply bg-[#232946] text-white h-screen w-full flex justify-center items-center flex-col text-center;
 }
 
 .h1 {
