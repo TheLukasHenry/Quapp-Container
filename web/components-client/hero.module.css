@@ -1,3 +1,15 @@
+.hero {
+  @apply bg-primary text-white h-screen w-full flex justify-center items-center flex-col text-center;
+}
+
+.h1 {
+  @apply text-4xl mb-0;
+}
+
+.paragraph {
+  @apply text-xl mt-0;
+}
+
 /* .hero {
   background-color: #232946;
   color: #fff;
@@ -10,24 +22,12 @@
   text-align: center;
 }
 
+.h1 {
+  font-size: 64px;
+  margin-bottom: 0; 
+}
 
 .paragraph {
   font-size: 24px;
   margin-top: 0;
 } */
-
-/* .h1 {
-  font-size: 64px;
-  margin-bottom: 0;
-} */
-.hero {
-  @apply bg-primary text-white h-screen w-full flex justify-center items-center flex-col text-center;
-}
-
-.h1 {
-  @apply text-4xl mb-0;
-}
-
-.paragraph {
-  @apply text-xl mt-0;
-}

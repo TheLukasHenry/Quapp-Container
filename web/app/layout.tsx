@@ -24,6 +24,8 @@ export default function RootLayout({
     <AuthProvider>
       <html lang="en">
         <body className={myFont.className}>
+          <h1 className="text-pink-500 text-6xl mb-0 underline">QuappLayerr</h1>
+
           <NavMenu />
           <Hero />
           <Footer />
