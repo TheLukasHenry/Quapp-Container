@@ -7,7 +7,7 @@ import { Poppins } from 'next/font/google'
 
 const myFont = Poppins({
   subsets: ['latin'],
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  weight: ['200', '300', '400', '500', '600', '700', '800', '900', '100'],
 })
 
 export const metadata = {
@@ -24,6 +24,7 @@ export default function RootLayout({
     <AuthProvider>
       <html lang="en">
         <body className={myFont.className}>
+          <p></p>
           <h1 className="text-pink-500 text-6xl mb-0 underline">QuappLayerr</h1>
 
           <NavMenu />
