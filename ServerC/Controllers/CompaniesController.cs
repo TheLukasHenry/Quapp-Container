@@ -24,7 +24,7 @@ namespace ServerC.Controllers
     }
 
     [HttpGet("{id}")]
-    [Authorize]
+    // [Authorize]
     public async Task<ActionResult<Company>> GetCompany(int id) // Changed from GetCompanyById to GetCompany
     {
       Company company = await _companiesService.GetCompanyByIdAsync(id);
