@@ -1,24 +1,27 @@
 # Guapp-Container
-1. npm install in the web folder
-2. To start server
-    select run and debug from the left nav
-    choose .Net Core Launch(web)
-    then click play
-    to run the web UI (next)
-    choose: NextJs start
 
-3. To deploy database
-right click QuappyMcQuapperson
-click build
-right click QuappyMcQuapperson
-click publish
-    publish to existing database
-    don't use profile
-    select mssql-container [localhost:master:sa]
-    select QuappyMcQuapperson
-    select publish
-    you should see "Deploy dacpac: Suceeded"
-    
+1. Make sure Docker Desktop is running
+2. click "open in dev container" or "cmd + shift + p" + Dev Containers: Open workspace in container
+
+3. npm install in the web folder
+4. To start server
+   select run and debug from the left nav
+   choose .Net Core Launch(web)
+   then click play
+   to run the web UI (next)
+   choose: NextJs start
+
+5. To deploy database
+   right click QuappyMcQuapperson
+   click build
+   right click QuappyMcQuapperson
+   click publish
+   publish to existing database
+   don't use profile
+   select mssql-container [localhost:master:sa]
+   select QuappyMcQuapperson
+   select publish
+   you should see "Deploy dacpac: Suceeded"
 
 # Dev Container - README
 
@@ -65,4 +68,3 @@ npm install
 - You should see a success message: "Deploy dacpac: Succeeded."
 
 Congratulations! You now have a badass dev container ready to rock and roll with the Quapp project. Feel free to dive into the code, make awesome changes, and build something extraordinary!
-
