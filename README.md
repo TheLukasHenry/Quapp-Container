@@ -3,15 +3,19 @@
 1. Make sure Docker Desktop is running
 2. click "open in dev container" or "cmd + shift + p" + Dev Containers: Open workspace in container
 
-3. npm install in the web folder
-4. To start server
+3.Web setup:
+npm install in the web folder
+npm run g in the web folder
+
+4. To start backend server
    select run and debug from the left nav
    choose .Net Core Launch(web)
    then click play
-   to run the web UI (next)
+
+5. To run the web UI (next)
    choose: NextJs start
 
-5. To deploy database
+6. To deploy database
    right click QuappyMcQuapperson
    click build
    right click QuappyMcQuapperson
