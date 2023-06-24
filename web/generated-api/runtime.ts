@@ -70,7 +70,6 @@ export class Configuration {
     if (apiKey) {
       return typeof apiKey === 'function' ? apiKey : () => apiKey
     }
-    // return (apiKey: '1234567890000')
     return undefined
   }
 
