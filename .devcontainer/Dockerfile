@@ -7,3 +7,10 @@ RUN bash ./installSQLtools.sh \
 
 RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash - \
     && apt-get install -y nodejs
+
+# Install OpenJDK-11
+RUN apt-get update && \
+    apt-get install -y openjdk-11-jdk
+
+# Verify Java installation
+RUN java -version

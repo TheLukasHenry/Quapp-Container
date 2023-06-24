@@ -1,3 +1,4 @@
+import { ApiKeyMiddleware } from '@/ApiKeyMiddleware'
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -84,7 +85,7 @@ export class Configuration {
     }
 }
 
-export const DefaultConfig = new Configuration();
+export const DefaultConfig = new Configuration({ middleware: [ApiKeyMiddleware] });
 
 /**
  * This is the base class for all generated API classes.

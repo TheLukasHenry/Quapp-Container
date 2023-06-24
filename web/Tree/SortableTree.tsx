@@ -61,7 +61,10 @@ const measuring = {
 const dropAnimation: DropAnimation = {
   ...defaultDropAnimation,
 }
-function convertToTreeItems(testCases: TestCase[], testResults: []): TreeItems {
+function convertToTreeItems(
+  testCases: TestCase[],
+  testResults: TestResult[]
+): TreeItems {
   const treeItems: TreeItems = []
   const sortedTestCases = testCases.sort(
     (a, b) => (a.sortOrder || 0) - (b.sortOrder || 0)
@@ -153,7 +156,7 @@ function convertToTreeItems(testCases: TestCase[], testResults: []): TreeItems {
 
 interface Props {
   testCases: TestCase[]
-  testResults: []
+  testResults: TestResult[]
   collapsible?: boolean
   indentationWidth?: number
   indicator?: boolean
@@ -285,9 +288,9 @@ export function SortableTree({
                   : undefined
               }
               onRemove={removable ? () => handleRemove(id) : undefined}
-              singleResults={testResults?.map(
-                (testResult: TestResult) => testResult.singleResult
-              )}
+              // singleResults={testResults?.map(
+              //   (testResult: TestResult) => testResult.singleResult
+              // )}
               testResults={testResults}
               resultsLength={resultLength}
             />

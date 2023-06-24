@@ -40,7 +40,7 @@ namespace ServerC.Controllers
     }
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<TestResult>> GetTestResultById(int id)
+    public async Task<ActionResult<IEnumerable<TestResult>>> GetTestResultById(int id)
     {
       if (id <= 0)
       {

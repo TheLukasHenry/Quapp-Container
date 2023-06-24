@@ -78,7 +78,7 @@ export class TestResultsApi extends runtime.BaseAPI {
 
     /**
      */
-    async testResultsIdGetRaw(requestParameters: TestResultsIdGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TestResult>> {
+    async testResultsIdGetRaw(requestParameters: TestResultsIdGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<TestResult>>> {
         if (requestParameters.id === null || requestParameters.id === undefined) {
             throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling testResultsIdGet.');
         }
@@ -94,12 +94,12 @@ export class TestResultsApi extends runtime.BaseAPI {
             query: queryParameters,
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => TestResultFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => jsonValue.map(TestResultFromJSON));
     }
 
     /**
      */
-    async testResultsIdGet(requestParameters: TestResultsIdGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TestResult> {
+    async testResultsIdGet(requestParameters: TestResultsIdGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<TestResult>> {
         const response = await this.testResultsIdGetRaw(requestParameters, initOverrides);
         return await response.value();
     }

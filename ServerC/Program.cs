@@ -87,12 +87,14 @@ if (app.Environment.IsDevelopment())
   });
 }
 
-app.UseCors();
+// app.UseCors();
 
 app.UseHttpsRedirection();
 
-app.UseAuthentication();
-app.UseAuthorization();
+
+// app.UseAuthentication();
+// app.UseAuthorization();
+app.UseMiddleware<CustomApiKeyMiddleware>();
 
 app.MapControllers();
 
