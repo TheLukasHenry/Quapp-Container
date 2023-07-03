@@ -3,7 +3,7 @@ import React from 'react'
 import { SortableTree } from '@/Tree/SortableTree'
 import { TestCasesApi, FeaturesApi, TestResultsApi } from '@/generated-api/apis'
 import CreateTestCase from '@/components-client/CreateTestCase'
-import UpdateFeatureActions from '@/components-client/UpdateFeatureActions'
+import UpdateFeatureActions from '@/components-server/UpdateFeatureActions'
 
 const featuresClient = new FeaturesApi()
 const testResultClient = new TestResultsApi()
