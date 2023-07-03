@@ -15,6 +15,7 @@ export default async function page({ params }: { params: { id: string } }) {
     await testCasesClient.testCasesFeatureFeatureIdGet({
       featureId: +params.id,
     })
+
   const testResults =
     (await testResultClient.testResultsIdGet({
       id: +params.id,
