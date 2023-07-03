@@ -49,10 +49,8 @@ import { SortableTree } from '@/Tree/SortableTree'
 import { TestCasesApi, FeaturesApi, TestResultsApi } from '@/generated-api/apis'
 import CreateTestCase from '@/components-client/CreateTestCase'
 import UpdateFeature from '@/components-server/UpdateFeature'
-// const configuration = new Configuration({
-//   basePath: 'http://localhost:5001',
-// })
-// const featuresClient = new FeaturesApi(configuration)
+import UpdateFeatureActions from '@/components-client/UpdateFeatureActions'
+import UpdateFeatureActions2 from '@/components-client/UpdateFeatureActions2'
 
 const featuresClient = new FeaturesApi()
 const testResultClient = new TestResultsApi()
@@ -90,6 +88,8 @@ export default async function page({ params }: { params: { id: string } }) {
     <div>
       <h2>Feature/id page</h2>
       <UpdateFeature feature={feature} />
+      <UpdateFeatureActions feature={feature} />
+      <UpdateFeatureActions2 id={params.id} />
       <SortableTree
         collapsible
         indicator
