@@ -1,11 +1,7 @@
 import { FeaturesApi } from '../../generated-api/apis/FeaturesApi'
 import CreateFeature from './CreateFeature'
 import FeatureList from '../../components-server/FeaturesList'
-import { Configuration } from '@/generated-api'
-// const configuration = new Configuration({
-//   basePath: 'http://localhost:3000/api',
-// })
-// const featuresClient = new FeaturesApi(configuration)
+
 const featuresClient = new FeaturesApi()
 
 async function getFeatures() {
