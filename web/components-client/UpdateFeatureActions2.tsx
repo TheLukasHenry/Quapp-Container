@@ -1,29 +1,13 @@
 import { Feature } from '@/generated-api/models/Feature'
 import { FeaturesApi } from '@/generated-api/apis/FeaturesApi'
-
 import { revalidatePath } from 'next/cache'
 
 const featuresClient = new FeaturesApi()
-// WORKING!!!!
-export default async function UpdateFeatureActions2({ id }) {
-  // const feature = await featuresClient.featuresIdGet({ id: +params.id })
-  const feature = await featuresClient.featuresIdGet({ id })
+
+export default async function UpdateFeatureActions2({ id }: { id: string }) {
+  const feature = await featuresClient.featuresIdGet({ id: +id })
 
   const { name, companyId } = feature || {}
-
-  // async function putFeature() {
-  //   'use server'
-
-  //   const body: Feature = {
-  //     name: formData.get('name') as string,
-  //     companyId: Number(formData.get('companyId')),
-  //     id,
-  //   }
-  //   console.log('body: ', body)
-  //   await featuresClient.featuresPut({ feature: body })
-
-  //   revalidatePath(`/feature/${feature.id}`)
-  // }
 
   async function putFeature(formData: FormData) {
     'use server'
@@ -31,11 +15,10 @@ export default async function UpdateFeatureActions2({ id }) {
     const body: Feature = {
       name: formData.get('name') as string,
       companyId: Number(formData.get('companyId')),
-      id,
+      id: +id,
     }
-    console.log('body: ', body)
-    await featuresClient.featuresPut({ feature: body })
 
+    await featuresClient.featuresPut({ feature: body })
     revalidatePath(`/feature/${id}`)
   }
 

@@ -67,28 +67,11 @@ export default async function page({ params }: { params: { id: string } }) {
       id: +params.id,
     })) || []
 
-  // const testResultsResponse = await testResultClient.testResultsIdGet({
-  //   id: +params.id,
-  // })
-
-  // let testResults: TestResult[] = []
-
-  // if (Array.isArray(testResultsResponse)) {
-  //   testResults = testResultsResponse
-  // } else if (testResultsResponse && typeof testResultsResponse === 'object') {
-  //   console.warn(
-  //     'Expected testResults to be an array, but received an object. Wrapping the object in an array.'
-  //   )
-  //   testResults = [testResultsResponse]
-  // } else {
-  //   console.error('Unexpected response for test results:', testResultsResponse)
-  // }
-
   return (
     <div>
       <h2>Feature/id page</h2>
       <UpdateFeature feature={feature} />
-      <UpdateFeatureActions feature={feature} />
+      {/* <UpdateFeatureActions feature={feature} /> */}
       <UpdateFeatureActions2 id={params.id} />
       <SortableTree
         collapsible
@@ -96,7 +79,6 @@ export default async function page({ params }: { params: { id: string } }) {
         removable
         testCases={testCases}
         testResults={testResults}
-        // testResults={[]}
       />
       <CreateTestCase featureId={+params.id} />
     </div>
