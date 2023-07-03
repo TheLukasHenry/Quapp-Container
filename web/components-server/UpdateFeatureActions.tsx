@@ -1,70 +1,35 @@
-// NAMING NEEDS TO BE CHANGED
-
-'use client'
-
 import { Feature } from '@/generated-api/models/Feature'
 import { FeaturesApi } from '@/generated-api/apis/FeaturesApi'
-
 import { revalidatePath } from 'next/cache'
 
-type UpdateFeatureActionsProps = {
-  feature: Feature
-  putFeature: (formData: FormData) => Promise<void>
-}
+const featuresClient = new FeaturesApi()
 
-export default function UpdateFeatureActions({
-  feature,
-  putFeature,
-}: UpdateFeatureActionsProps) {
-  const { featureID, featureName, companyID } = feature || {}
+export default async function UpdateFeatureActions({ id }: { id: string }) {
+  const feature = await featuresClient.featuresIdGet({ id: +id })
 
-  const featuresClient = new FeaturesApi()
-
-  const formData = new FormData(e.currentTarget)
-
-  async function putFeature() {
-    'use server'
-
-    const body: Feature = {
-      featureName: formData.get('featureName') as string,
-      companyID: Number(formData.get('companyID')),
-      featureID,
-    }
-    console.log('body: ', body)
-    await featuresClient.featuresPut({ feature: body })
-
-    revalidatePath(`/feature/${feature.featureID}`)
-  }
+  const { name, companyId } = feature || {}
 
   async function putFeature(formData: FormData) {
     'use server'
 
     const body: Feature = {
-      featureName: formData.get('featureName') as string,
-      companyID: Number(formData.get('companyID')),
-      featureID,
+      name: formData.get('name') as string,
+      companyId: Number(formData.get('companyId')),
+      id: +id,
     }
-    console.log('body: ', body)
-    // await featuresClient.featuresPut({ feature: body })
-    await featuresClient.featuresPut({
-      feature: { featureName, featureID, companyID },
-    })
 
-    revalidatePath(`/feature/${feature.featureID}`)
+    await featuresClient.featuresPut({ feature: body })
+    revalidatePath(`/feature/${id}`)
   }
 
   return (
     <div>
-      <h2>Actions edit</h2>
+      <h2>Update Feature</h2>
       <form action={putFeature}>
-        <label htmlFor="featureName">Name</label>
-        <input
-          type="text"
-          name="featureName"
-          defaultValue={featureName ?? ''}
-        />
-        <label htmlFor="companyID">companyID</label>
-        <input type="text" name="companyID" defaultValue={companyID ?? ''} />
+        <label htmlFor="name">Name</label>
+        <input type="text" name="name" defaultValue={name ?? ''} />
+        <label htmlFor="companyId">companyId</label>
+        <input type="text" name="companyId" defaultValue={companyId ?? ''} />
 
         <button type="submit">Save</button>
       </form>
