@@ -1,5 +1,5 @@
 .nav {
-  @apply flex justify-between items-center p-4 bg-[#232946] text-white;
+  @apply flex justify-between items-center p-4 bg-primary text-white;
 }
 
 .logo {
@@ -25,11 +25,11 @@
 
 @media (max-width: 600px) {
   .links {
-    @apply transform translate-x-full h-screen w-full fixed top-0 right-0;
+    @apply transform translate-x-full h-full w-full fixed top-0 right-0;
   }
 
   .links.open {
-    @apply transform translate-x-0 flex flex-col justify-center items-center bg-[#232946];
+    @apply transform translate-x-0 flex flex-col justify-center items-center bg-primary;
   }
 
   .hamburger {

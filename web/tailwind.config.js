@@ -12,6 +12,12 @@ module.exports = {
         secondary: '#00FF00',
         tertiary: '#0000FF',
       },
+      fontSize: {
+        '9xl': '4rem',
+      },
+      maxWidth: {
+        '1200': '1200px',
+      },
     },
   },
   plugins: [],
