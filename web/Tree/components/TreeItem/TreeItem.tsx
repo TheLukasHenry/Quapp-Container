@@ -120,8 +120,9 @@ export const TreeItem = forwardRef<HTMLDivElement, Props>(
     // console.log('singleResults in TreeItem.tsx: ', singleResults)
     // console.trace(`TreeItem.tsx:71: ${singleResults}`)
     const handleDelete = async () => {
+      console.log("handleDelete on remove working") // Notify parent to remove item from state
+      onRemove && onRemove(id)
       await deleteTestCase(id)
-      onRemove && onRemove(id) // Notify parent to remove item from state
     }
 
     return (
