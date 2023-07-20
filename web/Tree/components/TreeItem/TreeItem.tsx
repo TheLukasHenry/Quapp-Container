@@ -23,7 +23,6 @@ async function createTestResult(input: CreateTestResultInput) {
   const response = await testResultClient.testResultsPost({
     createTestResultInput: input,
   })
-  console.log('TestResult created:', response)
 }
 
 async function updateTestResult(input: UpdateSingleTestResultInput) {
@@ -120,8 +119,8 @@ export const TreeItem = forwardRef<HTMLDivElement, Props>(
     // console.log('singleResults in TreeItem.tsx: ', singleResults)
     // console.trace(`TreeItem.tsx:71: ${singleResults}`)
     const handleDelete = async () => {
+      onRemove && onRemove(id)
       await deleteTestCase(id)
-      onRemove && onRemove(id) // Notify parent to remove item from state
     }
 
     return (
