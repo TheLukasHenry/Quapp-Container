@@ -23,7 +23,6 @@ async function createTestResult(input: CreateTestResultInput) {
   const response = await testResultClient.testResultsPost({
     createTestResultInput: input,
   })
-  console.log('TestResult created:', response)
 }
 
 async function updateTestResult(input: UpdateSingleTestResultInput) {
