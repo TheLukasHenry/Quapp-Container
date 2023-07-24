@@ -12,6 +12,9 @@ module.exports = {
         secondary: '#00FF00',
         tertiary: '#0000FF',
       },
+      backgroundColor: {
+        primary: 'var(--primary-color)', // Assuming you want to use the primary-color defined in :root
+      },
       fontSize: {
         '9xl': '4rem',
       },
