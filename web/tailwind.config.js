@@ -6,7 +6,43 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: 'var(--primary-color)',
+        secondary: '#00FF00',
+        tertiary: '#0000FF',
+      },
+      fontSize: {
+        '9xl': '4rem',
+      },
+      maxWidth: {
+        1200: '1200px',
+      },
+      spacing: {
+        1: '0.25rem',
+        2: '0.5rem',
+        3: '0.75rem',
+        4: '1rem',
+      },
+      colors: {
+        'text-red': 'var(--text-color-red)',
+        'text-blue': 'var(--text-color-blue)',
+      },
+      height: {
+        'hero-xs': '20rem',
+        'hero-sm': '30rem',
+        'hero-md': '40rem',
+      },
+      width: {
+        'hero-xs': '30rem',
+        'hero-sm': '40rem',
+        'hero-md': '50rem',
+      },
+      fontSize: {
+        lg: '1.125rem',
+        xl: '1.25rem',
+      },
+    },
   },
   plugins: [],
 }
