@@ -29,7 +29,7 @@ npm run g in the web folder
 
 # Dev Container - README
 
-Welcome to the badass dev container for the Quapp project! This README will guide you through the setup and usage of this powerful development environment. Strap in and get ready to unleash your coding skills!
+hello Welcome to the badass dev container for the Quapp project! This README will guide you through the setup and usage of this powerful development environment. Strap in and get ready to unleash your coding skills!
 
 ## What is a Dev Container?
 
